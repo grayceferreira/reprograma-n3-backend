@@ -41,4 +41,17 @@ describe('Jogo | Unit', () => {
       expect(resultado.acertou).to.be.true
     })
   })
+
+  context('quando o número informado não for válido', () => {
+    it('retorna a mensagem "Não é um número válido!"', () => {
+      const numeroGerado = 21
+      const resposta = 'ABC12'
+
+      const resultado = jogo(numeroGerado, resposta)
+
+      expect(resultado).to.be.an('object')
+      expect(resultado.mensagemErro).to.be.equal('Não é um número válido!')
+    })
+  })
+
 })
